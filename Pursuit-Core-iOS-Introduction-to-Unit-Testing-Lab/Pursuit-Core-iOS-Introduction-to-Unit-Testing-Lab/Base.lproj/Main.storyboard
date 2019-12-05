@@ -26,6 +26,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="lA3-pP-In1" kind="show" id="AZH-UI-VdJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -42,7 +45,6 @@
                     <navigationItem key="navigationItem" id="XuX-Dt-yiX"/>
                     <connections>
                         <outlet property="jokeTableView" destination="vjC-4p-FHw" id="7ZR-6I-chG"/>
-                        <segue destination="lA3-pP-In1" kind="show" id="Lt1-sh-jFX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fY9-eC-m3f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -77,36 +79,79 @@
             </objects>
             <point key="canvasLocation" x="3360.8695652173915" y="-533.03571428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Star Wars View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="starWarsViewController" customModule="Pursuit_Core_iOS_Introduction_to_Unit_Testing_Lab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iJ7-KR-rpB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="starWarsCell" id="BP3-9J-XoC">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BP3-9J-XoC" id="MTc-JX-17g">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="DVe-Nn-vXe" kind="show" id="Vep-p1-y4L"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iJ7-KR-rpB" secondAttribute="trailing" id="5XZ-DC-40y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iJ7-KR-rpB" secondAttribute="bottom" id="RdI-ie-IX1"/>
+                            <constraint firstItem="iJ7-KR-rpB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nk9-lI-bSm"/>
+                            <constraint firstItem="iJ7-KR-rpB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wPA-f2-8gy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="hH2-wj-P6d"/>
+                    <connections>
+                        <outlet property="starWarsFilmsTableView" destination="iJ7-KR-rpB" id="Bod-Mh-HPR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2455.072463768116" y="156.69642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Star Wars DetailVC-->
         <scene sceneID="KZC-5j-0jR">
             <objects>
-                <viewController id="DVe-Nn-vXe" sceneMemberID="viewController">
+                <viewController id="DVe-Nn-vXe" customClass="starWarsDetailVC" customModule="Pursuit_Core_iOS_Introduction_to_Unit_Testing_Lab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xGL-oW-Noz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kjs-xB-Ztn">
+                                <rect key="frame" x="29" y="294" width="356" height="309"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="K5t-om-GBk"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OV9-27-WPh"/>
+                    <connections>
+                        <outlet property="swOpeningCrawlTextView" destination="Kjs-xB-Ztn" id="KX4-z6-Jhe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pP-JM-ShX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3361" y="157"/>
+            <point key="canvasLocation" x="3360.8695652173915" y="156.69642857142856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xan-HT-Rgp">
@@ -145,6 +190,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gdF-Z3-hjy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ePm-7D-fTe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
